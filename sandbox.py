@@ -32,10 +32,10 @@ def beta_mcmc(N_hops, a, b):
     for i in range(0, N_hops):
         states.append(cur)
         next = random.uniform(0, 1)
-        ap = min(beta_s(next, a, b)/beta_s(cur, a, b), 1) # Calculate the acceptance probability
+        ap = min(beta_s(next, a, b)/beta_s(cur, a, b), 1)  # Calculate the acceptance probability
         if random_coin(ap):
             cur = next
-    return states[-1000:] # Returns the last 100 states of the chain
+    return states[-1000:]  # Returns the last 1000 states of the chain
 
 
 # Actual Beta PDF.
